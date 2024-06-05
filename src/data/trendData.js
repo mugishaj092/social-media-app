@@ -1,0 +1,34 @@
+export const trendData=[{
+    name:"Minions",
+    shares:97
+},
+{
+    name:"Batman",
+    shares:100
+},
+{
+    name:"Superman",
+    shares:100
+},{
+    name:"Spiderman",
+    shares:100
+},{
+    name:"Ironman",
+    shares:100
+},{
+    name:"Hulk",
+    shares:100
+},
+{
+    name:"ExpressJS",
+    shares:100
+},
+{
+    name:"NodeJS",
+    shares:100
+},{
+    name:"ReactJS",
+    shares:9.3
+},
+
+]

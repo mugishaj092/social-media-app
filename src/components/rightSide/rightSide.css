@@ -1,0 +1,10 @@
+.rightSide{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.r-btn{
+    height: 3rem;
+    width: 80%;
+    align-self: center;
+}
