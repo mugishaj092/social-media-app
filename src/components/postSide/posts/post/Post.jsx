@@ -16,6 +16,7 @@ function Post(data) {
         <img src={comment} alt="" />
         <img src={share} alt="" />
       </div>
+      <span style={{color: "var(--gray)",fontSize:'12px'}}>{data.data.likes} like</span>
       <div className="detail">
         <span><b>{data.data.name}</b></span>
         <span> {data.data.desc}</span>

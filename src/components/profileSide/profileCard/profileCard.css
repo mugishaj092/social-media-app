@@ -8,6 +8,9 @@
   background-color: var(--cardColor);
   padding-bottom: 10px;
 }
+.status{
+    width: 70%;
+}
 .profileImages{
     position: relative;
     display: flex;

@@ -4,6 +4,7 @@ import cover from "../../../img/cover.jpg";
 import profile from "../../../img/profileImg.jpg";
 
 function ProfileCard() {
+  const Profilepage = true;
   return (
     <div className="ProfileCard">
       <div className="profileImages">
@@ -18,20 +19,29 @@ function ProfileCard() {
 
       <div className="followStatus">
         <hr />
-        <div>
-        <div className="follow">
-          <span>5,020</span>
-          <span>Followings</span>
-        </div>
-        <div className="vl"></div>
-        <div className="follow">
-            <span>587</span> 
+        <div className="status">
+          <div className="follow">
+            <span>5,020</span>
+            <span>Followings</span>
+          </div>
+          <div className="vl"></div>
+          <div className="follow">
+            <span>587</span>
             <span>Followers</span>
-        </div>
+          </div>
+          {Profilepage && (
+            <>
+              <div className="vl"></div>
+              <div className="follow">
+                <span>5,020</span>
+                <span>Posts</span>
+              </div>
+            </>
+          )}
         </div>
         <hr />
       </div>
-      <span>My Profile</span>
+      {Profilepage? " ":<span>My Profile</span>}
     </div>
   );
 }
