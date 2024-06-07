@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import logo from "../../img/logo.png";
 import "./auth.css";
 
-function Auth() {
+function Auth() { 
   const [isSignup, setIsSignup] = useState(true);
   const [data, setData] = useState({
     firstname: "",
@@ -28,7 +28,6 @@ function Auth() {
       return;
     }
     setConfirmPass(false);
-    // Proceed with form submission logic (e.g., API call)
   };
 
   const resetForm = () => {
