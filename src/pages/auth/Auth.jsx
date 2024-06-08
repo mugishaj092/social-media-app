@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import logo from "../../img/logo.png";
 import "./auth.css";
+import { useDispatch, useSelector } from "react-redux";
+import { login, signUp } from "../../actions/AuthAction";
+import store from "../../store/reduxStore";
 
-function Auth() { 
+function Auth() {
   const [isSignup, setIsSignup] = useState(true);
+  const dispatch = useDispatch();
+  const loading=useSelector((state)=>state.auth.loading);
+  console.log(loading);
   const [data, setData] = useState({
     firstname: "",
     lastname: "",
@@ -23,11 +29,14 @@ function Auth() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (data.password !== data.confirmPassword) {
-      setConfirmPass(true);
-      return;
+    if (isSignup) {
+      data.password == data.confirmPassword
+        ? dispatch(signUp(data))
+        : setConfirmPass(false);
     }
-    setConfirmPass(false);
+    else{
+      dispatch(login(data))
+    }
   };
 
   const resetForm = () => {
@@ -144,8 +153,8 @@ function Auth() {
                 </>
               )}
             </span>
-            <button className="button S-btn" type="submit">
-              {isSignup ? "Signup" : "Login"}
+            <button className="button S-btn" type="submit" disabled={loading}>
+              {loading?"Loading...":isSignup ? "Signup" : "Login"}
             </button>
           </div>
         </form>
